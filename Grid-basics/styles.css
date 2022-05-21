@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&family=VT323&display=swap');
+
+body {
+  margin: 30px;
+  font-family: "Poppins";
+}
+
+.grid-container {
+    background: skyblue;
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    /* one fraction of the max width */
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 100px 400px 200px;
+    gap: 12px;
+    /* default behaviour */
+    justify-items: stretch;
+    align-items: stretch;
+}
+.grid-container > div {
+    background: darkcyan;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid black;
+    
+}
+/* grabs the first child of div */
+.grid-container > div:nth-child(1) {
+    /* start at grid line 1 and span 2 columns in width */
+    grid-column: 1 / span 2;
+}
+.grid-container > div:nth-child(2) {
+    /* starts at next available position */
+    grid-column: span 3;
+}
+.grid-container > div:nth-child(3) {
+    /* starts at next available position */
+    grid-column: span 1;
+}
+.grid-container > div:nth-child(4) {
+    /* span from gridline 2 to 6 */
+    grid-column: 2 / 6;
+    
+}
+.grid-container > div:nth-child(5) {
+    /* span from gridline 2 to 6 */
+    grid-column: span 3;
+}
+.grid-container > div:nth-child(6) {
+    /* span from gridline 2 to 6 */
+    grid-column: span 3;
+    justify-self: end;
+    align-self: start;
+}
